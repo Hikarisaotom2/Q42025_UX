@@ -1,0 +1,29 @@
+/*
+Trabajamos con una estructura similar al formato JSON
+
+ nombre {
+   nombre del atributo: valor del atributo;
+ }
+
+*/
+
+/* 
+Para asociar los estilos con nuestro HTML
+1 identificadores 
+2 clases 
+3 etiquetas 
+ */
+
+ #subtitulo {
+    color: blueviolet;
+ }
+
+ .etgiquetaForm {
+    color: brown;
+    font-weight: 900;
+ }
+
+ h1 {
+    color:aquamarine;
+ }
+ 

@@ -1,19 +1,64 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>Page Title</title>
-    </head>
-    <body>
+<!-- CSS 
+ 1) Archivo externo 
+ 2) Crearlo dentro del html 
+ 3) Estilos en linea (inline style)
+  -->
 
-        <h1>This is a Heading</h1> 
-        <p>This <br/>  is a  <br/> paragraph.</p>
-        ESTO NO ESTA EN UNA &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ETIQUETA
-        <br/> 
-no tenemos etiquetas de cierre 
+<head>
+    <title>Titulo de la pestana</title>
+    <!-- <link rel="stylesheet" href="RutaAlCSS"/> -->
+    <link rel="stylesheet" href="estilos.css" />
+    <style>
+        #imagen {
+            /* width:10%;
+            height: 10%; */
+            width: 500px;
+            width: 600px;
+        }
+    </style>
+</head>
 
-    </body>
-    <footer>
+<body>
 
-    </footer>
+    <div>
+        <img
+            src="https://www.shutterstock.com/image-vector/simple-animated-vector-depicting-image-260nw-2419388341.jpg" 
+            id ="imagen"
+            />
+        <!-- <img src="gatito.jpg" /> -->
+        <h1> Sign Up</h1>
+        <p id="subtitulo"> Bienvenido a nuestro pgrama, inscribete llenando tus datos</p>
+        <p style="color:chartreuse"> termino y condiciones</p>
+        <form>
+            <Label 
+            id="subtitulo" 
+            class="etgiquetaForm" 
+            style="color:chartreuse;"
+            >Edad</Label>
+            <input type="number" /> <br />
+            <Label  class="etgiquetaForm">Email</Label>
+            <input type="email" /><br />
+            <Label class="etgiquetaForm">Nombre</Label>
+            <input type="text" /><br />
+            <Label class="etgiquetaForm">Appelido</Label>
+            <input type="text" /><br />
+            <Label class="etgiquetaForm">Fecha nacimiento</Label>
+            <input type="date" /><br />
+            <Label class="etgiquetaForm">Terminos y condiciones</Label>
+            <input type="checkbox" /><br />
+            <input type="button" value="Registrar" />
+            <button>Registrar</button>
+        </form>
+    </div>
+
+    <div></div>
+
+</body>
+<footer>
+
+</footer>
+
 </html>
