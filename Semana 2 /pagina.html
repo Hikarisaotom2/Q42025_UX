@@ -11,6 +11,7 @@
     <title>Titulo de la pestana</title>
     <!-- <link rel="stylesheet" href="RutaAlCSS"/> -->
     <link rel="stylesheet" href="estilos.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <style>
         #imagen {
             /* width:10%;
@@ -23,32 +24,36 @@
 
 <body>
 
-    <div>
+    <div class="backgroundPrincipal">
+        <center>
         <img
             src="https://www.shutterstock.com/image-vector/simple-animated-vector-depicting-image-260nw-2419388341.jpg" 
             id ="imagen"
             />
+        </center>
+
         <!-- <img src="gatito.jpg" /> -->
-        <h1> Sign Up</h1>
+        <h1 class="align-middle"> Sign Up</h1>
         <p id="subtitulo"> Bienvenido a nuestro pgrama, inscribete llenando tus datos</p>
-        <p style="color:chartreuse"> termino y condiciones</p>
-        <form>
-            <Label 
+        <!-- <p style="color:chartreuse"> termino y condiciones</p> -->
+        <form class="mx-4 my-12">
+            <!-- <Label 
             id="subtitulo" 
             class="etgiquetaForm" 
             style="color:chartreuse;"
-            >Edad</Label>
-            <input type="number" /> <br />
+            >Edad</Label> -->
+            <Label  class="form-label" >Edad</Label>
+            <input type="number" class="form-control"/> <br />
             <Label  class="etgiquetaForm">Email</Label>
-            <input type="email" /><br />
+            <input type="email" class="form-control" /><br />
             <Label class="etgiquetaForm">Nombre</Label>
-            <input type="text" /><br />
+            <input type="text" class="form-control"/><br />
             <Label class="etgiquetaForm">Appelido</Label>
-            <input type="text" /><br />
+            <input type="text" class="form-control" /><br />
             <Label class="etgiquetaForm">Fecha nacimiento</Label>
-            <input type="date" /><br />
+            <input type="date"  class="form-control"/><br />
             <Label class="etgiquetaForm">Terminos y condiciones</Label>
-            <input type="checkbox" /><br />
+            <input type="checkbox" class="form-control"/><br />
             <input type="button" value="Registrar" />
             <button>Registrar</button>
         </form>

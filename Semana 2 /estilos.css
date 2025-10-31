@@ -23,6 +23,13 @@ Para asociar los estilos con nuestro HTML
     font-weight: 900;
  }
 
+
+ .backgroundPrincipal {
+  background-color: aquamarine; 
+  margin-left: 20%;
+  margin-right: 20%;
+ }
+
  h1 {
     color:aquamarine;
  }
