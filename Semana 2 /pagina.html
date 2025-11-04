@@ -11,13 +11,14 @@
     <title>Titulo de la pestana</title>
     <!-- <link rel="stylesheet" href="RutaAlCSS"/> -->
     <link rel="stylesheet" href="estilos.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <style>
         #imagen {
-            /* width:10%;
-            height: 10%; */
-            width: 500px;
-            width: 600px;
+            width: 30%;
+            height: 30%;
+            /* width: 500px;
+            width: 600px; */
         }
     </style>
 </head>
@@ -26,15 +27,17 @@
 
     <div class="backgroundPrincipal">
         <center>
-        <img
-            src="https://www.shutterstock.com/image-vector/simple-animated-vector-depicting-image-260nw-2419388341.jpg" 
-            id ="imagen"
-            />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" id="imagen"
+                class="rounded" />
         </center>
 
         <!-- <img src="gatito.jpg" /> -->
-        <h1 class="align-middle"> Sign Up</h1>
-        <p id="subtitulo"> Bienvenido a nuestro pgrama, inscribete llenando tus datos</p>
+        <div class="d-flex  justify-content-center">
+            <div class="flex-column">
+                <h1 class="align-middle"> Sign Up</h1>
+                <p id="subtitulo"> Bienvenido a nuestro pgrama, inscribete llenando tus datos</p>
+            </div>
+        </div>
         <!-- <p style="color:chartreuse"> termino y condiciones</p> -->
         <form class="mx-4 my-12">
             <!-- <Label 
@@ -42,25 +45,148 @@
             class="etgiquetaForm" 
             style="color:chartreuse;"
             >Edad</Label> -->
-            <Label  class="form-label" >Edad</Label>
-            <input type="number" class="form-control"/> <br />
-            <Label  class="etgiquetaForm">Email</Label>
-            <input type="email" class="form-control" /><br />
+            <Label class="form-label">Edad</Label>
+            <input type="number" class="form-control" id="edad" /> <br />
+            <Label class="etgiquetaForm">Email</Label>
+            <input type="email" class="form-control" id="email" /><br />
             <Label class="etgiquetaForm">Nombre</Label>
-            <input type="text" class="form-control"/><br />
+            <input type="text" class="form-control" id="nombre" /><br />
             <Label class="etgiquetaForm">Appelido</Label>
-            <input type="text" class="form-control" /><br />
+            <input type="text" class="form-control" id="apellido" /><br />
             <Label class="etgiquetaForm">Fecha nacimiento</Label>
-            <input type="date"  class="form-control"/><br />
-            <Label class="etgiquetaForm">Terminos y condiciones</Label>
-            <input type="checkbox" class="form-control"/><br />
-            <input type="button" value="Registrar" />
-            <button>Registrar</button>
+            <input type="date" class="form-control" id="fechaNacimiento" /><br />
+            <div class="d-flex  justify-content-center">
+                <div class="flex-column">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                        <label class="form-check-label" for="checkDefault">
+                            Terminos y condiciones
+                        </label>
+                    </div><br />
+                  
+                </div>
+            </div>
         </form>
+          <input type="button" value="Limpiar" class="btn btn-secondary" />
+          <button class="btn btn-primary" onclick="capturarDatos()">Registrar</button>
     </div>
 
-    <div></div>
+    <div>
+        <script>
+            console.log(document.getElementById("edad"))
+            function capturarDatos() {
+                console.log("CAPTURANDO DATOS")
+                let persona = {
+                    edad: document.getElementById("edad").value,
+                    nombre: document.getElementById("nombre").value,
+                    apellido: document.getElementById("apellido").value,
+                    fechanacimiento: document.getElementById("fechaNacimiento").value,
+                    email: document.getElementById("email").value,
+                    terminosCondiciones: document.getElementById("checkDefault").value
+                }
 
+                enviarDatos(persona)
+
+            }
+
+            function enviarDatos(datosFormulario) {
+                console.log(datosFormulario)
+            }
+        </script>
+        <!-- <script>
+            console.log("Hola Mundo")
+            console.info("Informacion")
+            console.error("Algo salio mal")
+            //Variables 
+            /*
+             JS NO considera tipado de datos a nivel sintactico 
+             Sintaxis; como lo escribimos 
+             semantico: sentido logico 
+            */
+            var contador;
+            let acumulador;
+            const id = 123456
+            // Funciones 
+            /*
+            JS podemos escribir funciones de dos maneras: 
+            1) Forma comun 
+            2) Funciones anonimas/funciones flecha (arrow functions)/ Funcionas lambda
+            */
+
+            function calcularSuma(param1, param2, param3) {
+                return param1 + param2 + param3
+            }
+            console.log("Numeros ", calcularSuma(1, 2, 3))
+            console.log("Strings ", calcularSuma("hola", "mundo", "!!!!"))
+            console.log("Merequetengue ", calcularSuma(true, 737837373.9, ["hola", 2]))
+            // null, nan, undefined
+            function myVoincito() {
+
+            }
+
+
+            // arrow functions 
+            var miFuncionFlecha = (param1) => {
+
+            }
+
+
+
+            /*
+            1) compa
+            2) objetos 
+            3) capturar datos del formulario 
+            4) generar codigo dinamicamente 
+            */
+
+
+            /*
+            Igualdad: 
+             1) ==  :  compara el contenido de las variables. Es una verificacion mas flexible
+             2) === : compara el contenido de las variables y adicionalmente su tipo de dato, es  una comparacion mas estricta
+            */
+            console.log("3 NOVIEMBRE ")
+            // A=B B=C , A=C 
+            if (0 == "0") {
+                console.log("Es lo mismo 0 == \"0\" ")
+            } else {
+                console.log("NO es  lo mismo 0 == \"0\" ")
+            }
+
+            if (0 == []) {
+                console.log("Es lo mismo 0 == [] ")
+            } else {
+                console.log("NO es  lo mismo 0 == [] ")
+            }
+
+            if ("0" == []) {
+                console.log("Es lo mismo \"0\" == [] ")
+            } else {
+                console.log("NO es  lo mismo \"0\"  == [] ")
+            }
+
+            //Objetos
+            // JSON 
+
+            let persona = {
+                nombre: "Carlos ",
+                apellido: "Moncada",
+                edad: 20
+            }
+            console.log(persona.nombre);
+            persona.nombre = "Josue"
+            actualizar("apellido", "arita")
+            actualizar("edad", 36)
+            actualizar("estatura", "1.70")
+            actualizar("Edad", 21)
+
+
+            function actualizar(atributo, valor) {
+                persona[atributo] = valor
+                console.log(persona)
+            }
+
+        </script> -->
 </body>
 <footer>
 

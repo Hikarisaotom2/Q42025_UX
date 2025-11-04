@@ -33,4 +33,10 @@ Para asociar los estilos con nuestro HTML
  h1 {
     color:aquamarine;
  }
+
+ .centerElements{
+   flex-direction: column;
+   flex: content;
+   justify-content: center;
+ }
  
