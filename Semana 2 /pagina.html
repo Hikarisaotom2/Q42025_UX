@@ -67,6 +67,7 @@
                 </div>
             </div>
         </form>
+        <h1 id="mensajeFinal"> </h1>
           <input type="button" value="Limpiar" class="btn btn-secondary" />
           <button class="btn btn-primary" onclick="capturarDatos()">Registrar</button>
     </div>
@@ -76,6 +77,7 @@
             console.log(document.getElementById("edad"))
             function capturarDatos() {
                 console.log("CAPTURANDO DATOS")
+                
                 let persona = {
                     edad: document.getElementById("edad").value,
                     nombre: document.getElementById("nombre").value,
@@ -91,6 +93,8 @@
 
             function enviarDatos(datosFormulario) {
                 console.log(datosFormulario)
+                document.getElementById("mensajeFinal").innerText = "Datos enviados con exito";
+                console.log("Los datos se enviaron!");
             }
         </script>
         <!-- <script>
