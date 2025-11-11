@@ -1,0 +1,56 @@
+[00:53:39.590] Server  ERROR    ⨯ Error: Cannot find module 'next/dist/client/components/builtin/global-not-found'
+Require stack:
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/dev/on-demand-entry-handler.js
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/dev/hot-reloader-turbopack.js
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/lib/router-server.js
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/lib/start-server.js
+[00:53:39.669] Server  ERROR   Error: Cannot find module 'next/dist/pages/_error'
+Require stack:
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/dev/on-demand-entry-handler.js
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/dev/hot-reloader-turbopack.js
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/lib/router-server.js
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/lib/start-server.js
+[00:53:39.703] Server  ERROR    ⨯ Error: Cannot find module 'next/dist/pages/_error'
+Require stack:
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/dev/on-demand-entry-handler.js
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/dev/hot-reloader-turbopack.js
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/lib/router-server.js
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/lib/start-server.js
+[00:53:39.805] Server  ERROR   Error: Cannot find module 'next/dist/pages/_error'
+Require stack:
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/dev/on-demand-entry-handler.js
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/dev/hot-reloader-turbopack.js
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/lib/router-server.js
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/lib/start-server.js
+[00:53:39.862] Server  ERROR    ⨯ Error: Cannot find module 'next/dist/client/components/builtin/global-not-found'
+Require stack:
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/dev/on-demand-entry-handler.js
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/dev/hot-reloader-turbopack.js
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/lib/router-server.js
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/lib/start-server.js
+[00:53:39.892] Server  ERROR   Error: Cannot find module 'next/dist/pages/_error'
+Require stack:
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/dev/on-demand-entry-handler.js
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/dev/hot-reloader-turbopack.js
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/lib/router-server.js
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/lib/start-server.js
+[00:53:39.921] Server  ERROR    ⨯ Error: Cannot find module 'next/dist/pages/_error'
+Require stack:
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/dev/on-demand-entry-handler.js
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/dev/hot-reloader-turbopack.js
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/lib/router-server.js
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/lib/start-server.js
+[00:53:39.947] Server  ERROR   Error: Cannot find module 'next/dist/pages/_error'
+Require stack:
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/dev/on-demand-entry-handler.js
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/dev/hot-reloader-turbopack.js
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/lib/router-server.js
+- /Users/claudiacortes/Desktop/ UX Q4 2025/Semana 4/uxq42025/node_modules/next/dist/server/lib/start-server.js
