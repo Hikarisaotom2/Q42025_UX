@@ -1,5 +1,5 @@
 'use client'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Boton from "./boton";
 
 export default function InputTexto() {
@@ -14,6 +14,11 @@ export default function InputTexto() {
     function agregarLista(){
         setLista([...lista,textoBusqueda])
     }
+    // Un render en especifico 
+    useEffect(()=>{
+      console.log("Detectando un cambio en la lista");
+    },[lista]);
+   
     return (
         <div>
             <input type="text" className="font-semibold text-red-600  bg-red-100"

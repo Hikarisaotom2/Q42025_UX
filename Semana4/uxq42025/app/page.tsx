@@ -1,11 +1,18 @@
+'use client'
 import Image from "next/image";
 import Boton from "./componentes/atomos/boton";
 import CampoForm from "./componentes/moleculas/campoForm";
 import InputTexto from "./componentes/atomos/inputTexto";
+import { useEffect, useState } from "react";
 
 
 export default function Home() {
-   
+   const [textoBusqueda, setTextoBusqueda] = useState<string>("");
+        
+        function realizarBusqueda(event: any) {
+            // console.log("[DEBUG]", event)
+            setTextoBusqueda(event.target.value)
+        }
 
   let variable = 10;
 
@@ -14,7 +21,23 @@ export default function Home() {
       return <h3>{numero*numero*numero}</h3>;
   }
 
- 
+  //Use effect
+    
+    // reaccionar al primer render 
+    useEffect(()=>{
+      // cargando la infor = true
+        // peticion ala BD para traer la info 
+        // montar respuesta en un useState 
+        // cargando la informacion = false
+      console.log("Primer render!");
+    },[]);
+
+    // Reaccionar a todos los renders de la pagina 
+    useEffect(()=>{
+          console.log("Un render!!!");
+    });
+    
+
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
@@ -25,7 +48,12 @@ export default function Home() {
         <Boton titulo="Clear" customStyle="font-semibold text-zinc-600  bg-red-200"/>
        
         <InputTexto />
-      
+      <input type="text" className="font-semibold text-red-600  bg-red-100"
+                //    onClick={(event:any)=>{realizarBusqueda(event)}}
+                onChange={realizarBusqueda}
+                value={textoBusqueda}
+            />
+    <h1>{textoBusqueda}</h1>
         <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
           <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
          {hola(9)}
