@@ -21,8 +21,10 @@ export default function Home() {
       return <h3>{numero*numero*numero}</h3>;
   }
 
+
+
   //Use effect
-    
+
     // reaccionar al primer render 
     useEffect(()=>{
       // cargando la infor = true
@@ -37,15 +39,25 @@ export default function Home() {
           console.log("Un render!!!");
     });
     
-
+  function logOut(){
+    console.log("click en dar logout")
+  }
+  const clear = ()=>{
+    console.log("click en el boton clear")
+  }
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
 
-        <Boton titulo ="Log Out" customStyle="text-blue-600  bg-red-500"/>
-        <Boton titulo="Registrar" customStyle="font-semibold text-red-600  bg-red-100"/>
-        <Boton titulo="Clear" customStyle="font-semibold text-zinc-600  bg-red-200"/>
+        <Boton titulo ="Log Out" customStyle="text-blue-600  bg-red-500" onDarClick={logOut}/>
+        <Boton titulo="Registrar" customStyle="font-semibold text-red-600  bg-red-100" onDarClick={()=>{
+          console.log("Click en el boton registrar")
+        }}/>
+        <Boton titulo="Clear" customStyle="font-semibold text-zinc-600  bg-red-200" onDarClick={clear}/>
+           <Boton titulo="NUEVA FUNCION" customStyle="font-semibold text-red-600  bg-red-100" onDarClick={()=>{
+          console.log("Click en el boton de nuevo")
+        }}/>
        
         <InputTexto />
       <input type="text" className="font-semibold text-red-600  bg-red-100"
