@@ -1,9 +1,12 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 
+let parser = bodyParser.urlencoded({extended:true});
 
 const app = express()
 const port = 3001;
 
+app.use(parser);
 
 /*
 callback:  funcion que se ejecuta automaticamente al final de un proceso async
@@ -44,7 +47,34 @@ METODOS HTTP
 // request  response 
  app.get('/saludar', (req,res)=>{
         console.log("Solicitud entrante....!");
-        res.status(200).send("Hola desde el servidor!!!!!!");
+        // console.log("request ", req);
+        // console.log("response ", res)
+        res.status(200).send({
+            solicitud: "aceptada",
+            mensaje: "Hola desde el servidor!!!!!!",
+            otraInfo: "......."
+        });
  });
 
+ //informacion por body 
+ app.post('/login', (req,res)=>{
+    const {user,password} = req.body;
+
+   console.log(req.body);
+   console.log("user", req.body.user)
+   console.log("password", req.body.Password)
+   
+
+    res.status(200).send({
+        resultado: "Exitoso"
+    });
+ });
+
+ app.put('/actualizar/:dni',(req,res)=>{
+    let dni = req.params.dni
+    console.log("DNI ", dni);
+    res.status(200).send({
+        resultado: "Exitoso"
+    });
+ });
 
