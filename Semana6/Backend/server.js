@@ -43,7 +43,6 @@ METODOS HTTP
     - Payload: información que se envia en la solicitud
     - Endpoint: es la combinación entre la ruta y el metodo HTTP
 */
-
 // request  response 
  app.get('/saludar', (req,res)=>{
         console.log("Solicitud entrante....!");

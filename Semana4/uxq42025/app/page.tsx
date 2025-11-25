@@ -55,8 +55,10 @@ export default function Home() {
           console.log("Click en el boton registrar")
         }}/>
         <Boton titulo="Clear" customStyle="font-semibold text-zinc-600  bg-red-200" onDarClick={clear}/>
-           <Boton titulo="NUEVA FUNCION" customStyle="font-semibold text-red-600  bg-red-100" onDarClick={()=>{
-          console.log("Click en el boton de nuevo")
+           <Boton titulo="ENVS" customStyle="font-semibold text-red-600  bg-red-100" onDarClick={()=>{
+          console.log("variables de entorno: ")
+          console.log(process.env.NEXT_PUBLIC_BE_URL)
+          console.log(process.env.NEXT_PUBLIC_AWS_PASSWORD)
         }}/>
        
         <InputTexto />
