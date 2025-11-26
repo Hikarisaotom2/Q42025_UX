@@ -1,12 +1,19 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 let parser = bodyParser.urlencoded({extended:true});
+
+let corsConfig = {
+    origin: '*'
+}
+let politicaSeguridadCors = cors(corsConfig)
 
 const app = express()
 const port = 3001;
 
 app.use(parser);
+app.use(politicaSeguridadCors)
 
 /*
 callback:  funcion que se ejecuta automaticamente al final de un proceso async
