@@ -72,7 +72,8 @@ METODOS HTTP
    
 
     res.status(200).send({
-        resultado: "Exitoso"
+        resultado: "Exitoso",
+        mensaje: "La informacion que me enviaron es "+ req.body
     });
  });
 
