@@ -43,7 +43,8 @@ export default function Home() {
         user :"claudia_cortes",
         Password: "Hola Mundo",
        
-      }, { headers: { 'content-type': 'application/x-www-form-urlencoded' }})
+      },
+       { headers: { 'content-type': 'application/x-www-form-urlencoded' }})
       setTextoBusqueda(response.data.mensaje);
       console.log("Resultado peticion ", response.data)
     } catch (error) {
