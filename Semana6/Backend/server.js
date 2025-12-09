@@ -1,10 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const { initializeApp }  = require("firebase/app");
+
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 
 let parser = bodyParser.urlencoded({ extended: true });
 const uri = "mongodb+srv://claseux2025:Password1!@uxq52025.iifco7f.mongodb.net/?appName=uxq52025";
+
+
 
 const client = new MongoClient(uri, {
     serverApi: {
@@ -13,6 +17,17 @@ const client = new MongoClient(uri, {
         deprecationErrors: true,
     }
 });
+
+const firebaseConfig = {
+  apiKey: "AIzaSyANfGoaMujjHFWOM5kG14AGvaNTmJHj1AY",
+  authDomain: "uxq4-2025.firebaseapp.com",
+  projectId: "uxq4-2025",
+  storageBucket: "uxq4-2025.firebasestorage.app",
+  messagingSenderId: "588111523070",
+  appId: "1:588111523070:web:041188d9b3a748d89649af",
+  measurementId: "G-N62VYJ0KKY"
+};
+const firebaseApp = initializeApp(firebaseConfig);
 
 let corsConfig = {
     origin: '*'
@@ -24,6 +39,7 @@ const port = 3001;
 
 app.use(parser);
 app.use(politicaSeguridadCors)
+
 
 app.listen(port, async () => {
     console.log("el servidor se esta ejecutando en el puerto, ", port)
