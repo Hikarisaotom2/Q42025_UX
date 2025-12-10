@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const { initializeApp }  = require("firebase/app");
+const { getAuth, createUserWithEmailAndPassword } = require("firebase/auth");
 
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 
@@ -27,6 +28,7 @@ const firebaseConfig = {
   appId: "1:588111523070:web:041188d9b3a748d89649af",
   measurementId: "G-N62VYJ0KKY"
 };
+
 const firebaseApp = initializeApp(firebaseConfig);
 
 let corsConfig = {
@@ -43,9 +45,9 @@ app.use(politicaSeguridadCors)
 
 app.listen(port, async () => {
     console.log("el servidor se esta ejecutando en el puerto, ", port)
-    await client.connect();
-    await client.db("ux2025DB").command({ ping: 1 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+    // await client.connect();
+    // await client.db("ux2025DB").command({ ping: 1 });
+    // console.log("Pinged your deployment. You successfully connected to MongoDB!");
 });
 console.log("Esta linea esta luego del app.listen");
 
@@ -74,23 +76,28 @@ METODOS HTTP
     - callback:  funcion que se ejecuta automaticamente al final de un proceso async
 */
 
+//FIREBASE
+
 app.post('/crearUsuario', async (req, res) => {
     try {
-        const db = client.db("ux2025DB")
+        const auth = getAuth();
+        const responseFirebase = await createUserWithEmailAndPassword(auth, req.body.user, req.body.password);
+
+        // const db = client.db("ux2025DB")
         // collection == tabla 
-        const collection = db.collection("usuarios");
+        // const collection = db.collection("usuarios");
         // documento == registro=tupla
         const nuevoUsuario = {
-            userName: req.body.user,
-            password: req.body.password,
+            idFirebase: responseFirebase.user.uid,
             ...req.body
         }
 
-        const response = await collection.insertOne(nuevoUsuario);
+        // const response = await collection.insertOne(nuevoUsuario);
 
         res.status(201).send({
             mensaje: "Usuario creado",
-            responseMongo: response
+            // responseMongo: response,
+            responseFirebase:responseFirebase
         })
 
     } catch (e) {
