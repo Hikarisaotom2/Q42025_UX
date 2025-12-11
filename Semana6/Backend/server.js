@@ -1,8 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const { initializeApp }  = require("firebase/app");
-const { getAuth, createUserWithEmailAndPassword } = require("firebase/auth");
+const { initializeApp } = require("firebase/app");
+const { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } = require("firebase/auth");
 
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 
@@ -20,13 +20,13 @@ const client = new MongoClient(uri, {
 });
 
 const firebaseConfig = {
-  apiKey: "AIzaSyANfGoaMujjHFWOM5kG14AGvaNTmJHj1AY",
-  authDomain: "uxq4-2025.firebaseapp.com",
-  projectId: "uxq4-2025",
-  storageBucket: "uxq4-2025.firebasestorage.app",
-  messagingSenderId: "588111523070",
-  appId: "1:588111523070:web:041188d9b3a748d89649af",
-  measurementId: "G-N62VYJ0KKY"
+    apiKey: "AIzaSyANfGoaMujjHFWOM5kG14AGvaNTmJHj1AY",
+    authDomain: "uxq4-2025.firebaseapp.com",
+    projectId: "uxq4-2025",
+    storageBucket: "uxq4-2025.firebasestorage.app",
+    messagingSenderId: "588111523070",
+    appId: "1:588111523070:web:041188d9b3a748d89649af",
+    measurementId: "G-N62VYJ0KKY"
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
@@ -97,7 +97,7 @@ app.post('/crearUsuario', async (req, res) => {
         res.status(201).send({
             mensaje: "Usuario creado",
             // responseMongo: response,
-            responseFirebase:responseFirebase
+            responseFirebase: responseFirebase
         })
 
     } catch (e) {
@@ -133,20 +133,20 @@ app.get('/traerRegistros', async (req, res) => {
 app.put('/actualizar/:username', async (req, res) => {
     let userNameUpdate = req.params.username
     try {
-      const db = client.db("ux2025DB")
-      const collection = db.collection("usuarios");
-      const filter = {
-        userName: userNameUpdate,
-      }
+        const db = client.db("ux2025DB")
+        const collection = db.collection("usuarios");
+        const filter = {
+            userName: userNameUpdate,
+        }
 
-      const updateDocument = {
-            $set :{
+        const updateDocument = {
+            $set: {
                 password: req.body.newPassword,
                 upgradePerfil: true,
             }
-      }
+        }
 
-     const response = await collection.updateOne(filter,updateDocument);
+        const response = await collection.updateOne(filter, updateDocument);
 
         res.status(203).send({
             resultado: "Registro actualizado con exito",
@@ -164,28 +164,28 @@ app.put('/actualizar/:username', async (req, res) => {
 });
 
 
-app.delete('/eliminar/:id', async (req,res)=>{
-    try{
-       const db = client.db("ux2025DB")
-      const collection = db.collection("usuarios");
-      const filter = {
-        _id : new ObjectId(req.params.id),
-      }
-       const response = await collection.deleteOne(filter);
+app.delete('/eliminar/:id', async (req, res) => {
+    try {
+        const db = client.db("ux2025DB")
+        const collection = db.collection("usuarios");
+        const filter = {
+            _id: new ObjectId(req.params.id),
+        }
+        const response = await collection.deleteOne(filter);
 
-      if(response.deletedCount == 0 ){
+        if (response.deletedCount == 0) {
             res.status(200).send({
-            resultado: "No existen registros con ese id ",
-            response: response,
-        });
-      }else{
+                resultado: "No existen registros con ese id ",
+                response: response,
+            });
+        } else {
             res.status(200).send({
-            resultado: "Registro Eliminado ",
-            response: response,
-        });
-      }
+                resultado: "Registro Eliminado ",
+                response: response,
+            });
+        }
 
-   } catch (error) {
+    } catch (error) {
         console.log(e)
         res.status(500).send({
             mensaje: "Lo sentimos algo salio mal, intentelo de nuevo",
@@ -196,18 +196,41 @@ app.delete('/eliminar/:id', async (req,res)=>{
 
 
 //informacion por body 
-app.post('/login', (req, res) => {
-    const { user, password } = req.body;
+app.post('/login', async (req, res) => {
+    try {
+        const { user, password } = req.body;
+        const auth = getAuth();
+        const response = await signInWithEmailAndPassword(auth, user, password);
+        res.status(200).send({
+            resultado: response,
+        });
 
-    console.log(req.body);
-    console.log("user", req.body.user)
-    console.log("password", req.body.Password)
+    } catch (error) {
+        res.status(500).send({
+            resultado: error,
+            mensaje: "ocurrio un error"
+        });
+    }
+});
 
 
-    res.status(200).send({
-        resultado: "Exitoso",
-        mensaje: "La informacion que me enviaron es " + req.body
-    });
+
+//informacion por body 
+app.post('/logout', async (req, res) => {
+    try {
+        const auth = getAuth();
+        const response = await signOut(auth);
+        res.status(200).send({
+            mensaje: "gracias por su visita, ",
+            resultado: response,
+        });
+
+    } catch (error) {
+        res.status(500).send({
+            resultado: error,
+            mensaje: "ocurrio un error"
+        });
+    }
 });
 
 
